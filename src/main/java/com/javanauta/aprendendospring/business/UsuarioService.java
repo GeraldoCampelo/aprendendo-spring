@@ -5,15 +5,12 @@ import com.javanauta.aprendendospring.infrastructure.exceptions.ConflictExceptio
 import com.javanauta.aprendendospring.infrastructure.exceptions.ResourceNotFoundException;
 import com.javanauta.aprendendospring.infrastructure.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.exception.ConstraintViolationException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor //vai gerar os construtores que tem o private final
 public class UsuarioService {
-
 
     private final UsuarioRepository usuarioRepository;
     private final PasswordEncoder passwordEncoder;
@@ -51,6 +48,5 @@ public class UsuarioService {
     public void deletarUsuarioPorEmail(String email) {
         usuarioRepository.deleteByEmail(email);
     }
-
 }
 
